@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+.center {
+  margin: 0 auto;
+  max-width: 1360px;
+}
+section.top .center {
+  position: relative;
+}
+section.top .center video {
+  z-index: -1;
+  max-width: 100%;
+  position: absolute;
+  border: solid 4px transparent;
+}
+
+.logotype {
+  display: flex;
+  font-family: "Archivo Black";
+  padding-top: 4rem;
+  background-color: #fff;
+  mix-blend-mode: screen;
+}
+.logotype .the {
+  transform: rotate(270deg) translateY(20px);
+  font-size: 32px;
+  font-family: "Archivo Black";
+}
+.logotype .beacon {
+  font-family: "Archivo Black";
+  font-size: 102px;
+  display: inline-block;
+  line-height: 73px;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.hero img {
+  max-width: 100%;
+  position: relative;
+  top: -100px;
+}
+
+.about .center {
+  margin-top: -104px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  padding: 0;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.about .section-title-container {
+  position: relative;
+  background-color: white;
+  width: 22%;
+  border: solid 4px;
+  border-right: none;
+  font-size: 32px;
+  font-family: "Archivo Black";
+  font-weight: 800;
+  padding-left: 0.5rem;
+  padding-top: 22%;
+}
+.about .section-title {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.about .section-title span:nth-child(2) {
+  align-self: flex-end;
+  color: #f4e1ca;
+}
+.about p {
+  font-size: 18px;
+  padding: 1rem;
+  color: white;
+  max-width: 500px;
+}
+.about a {
+  border: solid 4px white;
+  display: flex;
+  width: 200px;
+  height: 200px;
+  font-size: 25px;
+  margin-right: 3rem;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: white;
+  font-family: "Archivo Black";
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0.5rem;
+  position: relative;
+}
+.about a::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: white;
+  transition: 0.3s ease-in-out all;
+}
+
+.about a > span {
+  z-index: 2;
+  color: white;
+  mix-blend-mode: difference;
+  font-family: "Archivo Black";
+}
+
+.about a:hover::before {
+  width: 100%;
+}
