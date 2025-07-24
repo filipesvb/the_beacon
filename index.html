@@ -18,14 +18,52 @@
         <video autoplay loop muted>
           <source src="./assets/nuvens.mp4" />
         </video>
-        <header>
-          <div class="logotype-fundo">aaaa</div>
-          <div class="logotype">
-            <div class="the">THE</div>
-            <div class="beacon">BEACON</div>
-          </div>
+        <header class="knockout">
+          <svg
+            class="knockout-text-container"
+            viewBox="0 0 100 20"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <defs>
+              <mask id="knockout-text">
+                <rect width="100%" height="100%" fill="#fff" />
+                <text
+                  x="3.8"
+                  y="20"
+                  fill="#000"
+                  font-size="21.3"
+                  font-family="Archivo Black"
+                  text-anchor="start"
+                  letter-spacing="-0.5"
+                >
+                  BEACON
+                </text>
+              </mask>
+            </defs>
+            <rect
+              class="knockout-text-bg"
+              width="100%"
+              height="100%"
+              fill="#000"
+              mask="url(#knockout-text)"
+            />
+            <text
+              x="-2"
+              y="19.2"
+              fill="#FFF"
+              font-size="7"
+              font-family="Archivo Black"
+              text-anchor="start"
+              letter-spacing="-0.5"
+              transform="rotate(-90, 2, 16)"
+            >
+              THE
+            </text>
+          </svg>
         </header>
+
         <div class="hero">
+          <div class="light-circle"></div>
           <img src="./assets/beacon.png" alt="" />
         </div>
       </div>
@@ -52,5 +90,7 @@
         <a href="/"><span>SAIBA MAIS</span></a>
       </div>
     </section>
+
+    <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>

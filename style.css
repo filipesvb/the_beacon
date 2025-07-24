@@ -5,6 +5,12 @@
   font-family: "Outfit", sans-serif;
 }
 
+body,
+html {
+  scroll-snap-type: y mandatory;
+  height: 100%;
+}
+
 .top {
   background: black;
   position: relative;
@@ -16,6 +22,7 @@
 }
 section.top .center {
   position: relative;
+  overflow-x: hidden;
 }
 section.top .center video {
   z-index: -1;
@@ -66,10 +73,30 @@ section.top .center video {
   mix-blend-mode: difference;
 }
 
+.hero {
+  width: 120%;
+}
+
+.hero .light-circle {
+  position: absolute;
+  right: 194px;
+  top: 200px;
+  width: 0;
+  height: 0;
+  background: repeating-radial-gradient(
+    circle at 50%,
+    yellow,
+    yellow 20px,
+    orange 20px,
+    orange 40px
+  );
+  border-radius: 50%;
+}
+
 .hero img {
   max-width: 100%;
   position: relative;
-  top: -100px;
+  top: -110px;
 }
 
 .about .center {

@@ -35,6 +35,7 @@
         </header>
 
         <div class="hero">
+          <div class="light-circle"></div>
           <img src="./assets/beacon.png" alt="" />
         </div>
       </div>
@@ -61,5 +62,7 @@
         <a href="/"><span>SAIBA MAIS</span></a>
       </div>
     </section>
+
+    <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>

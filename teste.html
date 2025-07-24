@@ -1,55 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Scroll que aumenta a div</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* bloqueia o scroll inicialmente */
+      }
+
+      #scroll-container {
+        height: 100vh;
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      #targetDiv {
+        width: 200px;
+        height: 100px;
+        background: crimson;
+        transition: height 0.05s;
+      }
+
+      #conteudo {
+        height: 2000px;
+        background: linear-gradient(white, gray);
+        display: none;
+      }
+    </style>
   </head>
-  <style>
-    .knockout {
-      /* Ensure the bottom layer is full screen */
-      height: 100vh;
-      width: 100%;
-      /* Add a colorful texture and cutom font-styling */
-      background-image: linear-gradient(to left, #ff4e50, #f9d423);
-      text-transform: uppercase;
-    }
-
-    /* Knockout text font sizing for each line */
-
-    text:nth-child(2) {
-      font-size: 5em;
-    }
-
-    text:nth-child(3) {
-      font-size: 5.1em;
-    }
-
-    text:nth-child(4) {
-      font-size: 15em;
-    }
-  </style>
   <body>
-    <div class="knockout">
-      <svg class="knockout-text-container" width="100%" height="100%">
-        <rect
-          class="knockout-text-bg"
-          width="100%"
-          height="100%"
-          fill="#000"
-          x="0"
-          y="0"
-          fill-opacity="1"
-          mask="url(#knockout-text)"
-        />
-
-        <mask id="knockout-text">
-          <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
-          <text x="50%" y="50%" fill="#000" text-anchor="middle">
-            Knock Out Text
-          </text>
-        </mask>
-      </svg>
+    <div id="scroll-container">
+      <div id="targetDiv">Expansível</div>
     </div>
+
+    <div id="conteudo">
+      <h1>Conteúdo liberado!</h1>
+      <p>Agora você pode rolar normalmente.</p>
+    </div>
+
+    <script>
+      let target = document.getElementById("targetDiv");
+      let content = document.getElementById("conteudo");
+      let scrollY = 0;
+      let growing = true;
+      let maxHeight = 400; // altura máxima da div
+
+      window.addEventListener(
+        "wheel",
+        (e) => {
+          if (growing) {
+            e.preventDefault();
+
+            scrollY += e.deltaY;
+
+            let newHeight = Math.min(100 + scrollY * 0.3, maxHeight);
+            target.style.height = newHeight + "px";
+
+            if (newHeight >= maxHeight) {
+              growing = false;
+              document.body.style.overflow = "auto"; // libera scroll
+              content.style.display = "block";
+              document.getElementById("scroll-container").style.height = "auto";
+            }
+          }
+        },
+        { passive: false }
+      );
+    </script>
   </body>
 </html>
