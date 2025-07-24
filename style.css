@@ -5,6 +5,11 @@
   font-family: "Outfit", sans-serif;
 }
 
+.top {
+  background: black;
+  position: relative;
+  z-index: -2;
+}
 .center {
   margin: 0 auto;
   max-width: 1360px;
@@ -17,6 +22,27 @@ section.top .center video {
   max-width: 100%;
   position: absolute;
   border: solid 4px transparent;
+}
+
+/* .knockout {
+  text-transform: uppercase;
+  width: 100%;
+}
+ */
+
+.knockout {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.knockout-text-container {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.knockout text {
+  font-family: "Archivo Black", sans-serif;
 }
 
 .logotype {
@@ -33,7 +59,7 @@ section.top .center video {
 }
 .logotype .beacon {
   font-family: "Archivo Black";
-  font-size: 102px;
+  font-size: 14vw;
   display: inline-block;
   line-height: 73px;
   color: white;
